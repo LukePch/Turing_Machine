@@ -1,0 +1,53 @@
+Module Module1
+    class StateInfo 
+        Private StateNumValue As Integer 
+        
+        Public Property StateNum() As integer
+            get
+                ' get body
+                Return StateNumValue
+            End get
+            Set(ByVal Value As integer)
+                ' Set body
+                StateNumValue = Value
+            End Set
+           
+        End Property
+        
+        Public Sub New(ByVal statenum As integer)
+            Me.StateNum = Statenum
+        End Sub
+
+    End class
+    
+    Function get_input(ByRef tapelength As Integer, ParamArray input() As String)
+        
+        
+        
+        For i = 0 to input.Length - 1
+            Console.WriteLine("Enter a 1/0 to represented on the tape: ")
+            input(i) = Console.ReadLine()
+        Next
+        Return input
+
+        
+    End Function
+    
+    Sub Main()
+        Console.WriteLine("Please enter how long you would like the tape to be: ")
+        Dim tapelength = CInt(Console.ReadLine())
+        Dim input(tapelength - 1) As String
+        get_input(tapelength, input)
+        
+        For count = 0 To input.Length - 1
+            Console.Write(input(count))
+        Next
+        
+        Dim state As New StateInfo(0)
+        Console.WriteLine("The original state is {0}", state.statenum )
+        state.StateNum = 1
+        Console.WriteLine("The new state is {0}", state.statenum)
+        Console.ReadLine()
+
+    End Sub
+End Module
