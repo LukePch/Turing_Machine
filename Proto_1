@@ -1,0 +1,97 @@
+Module Module1
+  
+    
+    
+    Sub Main()
+        
+        Dim out As Boolean = False 
+        Dim count As Integer = 0 
+        Dim i As Integer = 0 
+        Console.WriteLine("Please enter how long you would like the tape to be: ")
+        Dim tapelength = CInt(Console.ReadLine())
+        Dim input(tapelength - 1) As String
+        
+        For i = 0 to input.Length - 1
+            Console.WriteLine("Enter a 1/0 to represented on the tape: ")
+            input(i) = Console.ReadLine()
+        Next
+         i  = 0
+        For count = 0 To input.Length - 1
+            Console.Write(input(count))
+        Next
+        
+        While out = False 'state 0 
+            If input(i) = "1" Then
+                
+                console.WriteLine("Length")
+                
+                i = i + 1
+            ElseIf input(i) = "0" Then 
+                Console.writeline("Change State")
+                i = i + 1
+                out = True 
+                    
+            End If
+        End While
+        
+        out = False
+        
+        while out = False 'state 1 
+            if input(i) = "0" Then 
+                Console.WriteLine("length pt2")
+                i = i + 1
+            Elseif input(i) = "1" Then 
+                Console.WriteLine("Change Value ")
+                input(i) = "0"
+                i = i + 1 
+                out = True
+            End If
+        End While
+        
+        out = False
+        
+        While out = False 'state 2
+            if input(i) = "1" Then 
+                Console.WriteLine("Error")
+                input(i) = "0" 
+                i = i + 1 
+                out = True 
+            ElseIf input(i) = "0" Then 
+                Console.WriteLine("Change State pt3 ")
+                i = i + 1 
+                out = True
+                
+               
+                
+            End If
+        End While
+        out = False 
+        
+        while out = False 'state 3 
+            If input(i) = "0" Then
+                Console.WriteLine("Change value")
+                input(i) = "1" 
+                i = i + 1 
+                out = True 
+            End If
+        End While
+        
+        Console.WriteLine(i)
+       
+       
+        For count = 0 To input.Length - 1
+            Console.Write(input(count))
+        Next
+        
+        Console.ReadLine()
+        
+        
+        
+        
+    
+       
+    End Sub 
+    
+    
+    
+End Module
