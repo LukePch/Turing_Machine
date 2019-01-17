@@ -1,0 +1,30 @@
+Sub define_states(ByVal numstates As Integer)
+        Select Case numstates
+            Case 1 
+                Console.WriteLine("1")
+            Case 2 
+                Console.WriteLine("2")
+            Case 4
+                Console.WriteLine("You are going to define four classes...")
+                Dim input As Queue(Of String) = New Queue(Of String)() 
+                For i = 0 To 7 
+                    Console.Write(": ")
+                    input.Enqueue(Console.ReadLine())
+                Next
+                Console.WriteLine("Test Output")
+                For each mark As String in Input
+                    Console.WriteLine(mark)
+                Next
+                
+                
+            
+            Case 7
+                Console.WriteLine("3")
+            Case 8 
+                console.WriteLine("8")
+                
+        End Select
+        
+        Console.ReadLine()
+        
+    End Sub
